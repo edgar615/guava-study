@@ -14,5 +14,6 @@ public class AllTradeExample {
         executor.executeTrade(100, "buy");
 
         executor.executeTrade(200, "sell");
+        System.out.println(Thread.currentThread().getId());
     }
 }

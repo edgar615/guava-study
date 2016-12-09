@@ -21,6 +21,7 @@ public class AllTradeExecutor {
 
 
     private TradeAccountEvent processTrade(double amount, String type) {
+        System.out.println(Thread.currentThread().getId());
         Date executiontime = new Date();
         String message = String.format("Proccessed trade amount %s @ %s", amount, executiontime);
         System.out.println(message);
