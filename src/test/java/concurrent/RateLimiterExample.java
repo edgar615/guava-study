@@ -28,7 +28,7 @@ public class RateLimiterExample {
   public static void main(String[] args) throws InterruptedException {
     //令牌桶的实现
     //平滑突发限流（SmoothBursty）
-    //桶容量为5，且每秒新增5个令牌，即每隔2000毫秒新增一个令牌
+    //桶容量为5，且每秒新增5个令牌，即每隔200毫秒新增一个令牌
     RateLimiter limiter = RateLimiter.create(5);
     //limiter.acquire表示消费一个令牌，如果当前桶中有足够令牌则成功(返回值为0)
     //如果动作没有令牌则暂停一段时间，比如发令牌的间隔是200毫秒，则等待200毫秒后再去消费令牌
