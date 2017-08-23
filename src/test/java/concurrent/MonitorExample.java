@@ -34,6 +34,9 @@ public class MonitorExample {
     }
 
     public void removeItem() {
+        if (list.isEmpty()) {
+            return;
+        }
         list.remove(0);
     }
 
@@ -56,20 +59,20 @@ public class MonitorExample {
                 }
             });
         }
-//        EXEC.execute(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    while (true) {
-//                        example.removeItem();
-//                        System.out.println("remove item");
-//                        TimeUnit.MICROSECONDS.sleep(500);
-//                    }
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
+        EXEC.execute(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    while (true) {
+                        example.removeItem();
+                        System.out.println("remove item");
+                        TimeUnit.MICROSECONDS.sleep(500);
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
         TimeUnit.SECONDS.sleep(30);
     }
 }
